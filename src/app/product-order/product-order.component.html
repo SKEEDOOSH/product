@@ -1,0 +1,27 @@
+<div class="order-container" *ngIf="checkoutData">
+  <h2>Order Review</h2>
+
+  <div *ngIf="isProcessing">Processing your order...</div>
+
+  <div *ngIf="orderSuccess" class="success">
+    ✅ Order successfully saved!
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    ❌ {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isProcessing">
+    <h3>Order Summary</h3>
+    <p><strong>Total Amount:</strong> {{ checkoutData.totalAmount | currency }}</p>
+
+    <h4>Items:</h4>
+    <ul>
+      <li *ngFor="let item of checkoutData?.cartItems">
+        {{ item.productName }} - {{ item.price | currency }}
+      </li>
+    </ul> 
+
+    <button (click)="payAndReview()" class="pay-btn">💳 Pay & Review</button>
+  </div>
+</div>

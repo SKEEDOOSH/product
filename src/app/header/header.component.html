@@ -1,0 +1,36 @@
+<header class="navbar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Logo -->
+  <a class="navbar-brand" routerLink="">
+  <img [src]="'/GMART.png'" alt="GMART Logo" style="height: 40px;">
+
+</a>
+      
+      <!-- Navigation Buttons -->
+      <nav>
+        <ul class="navbar-nav d-flex align-items-center">
+          <!-- Existing menu buttons -->
+          <li *ngFor="let menu of menus">
+            <a class="nav-link btn btn-primary me-2" routerLink="/{{menu.routerPath}}">
+              {{menu.name}}
+            </a>
+          </li>
+
+            <li *ngIf="!authService.isLoggedIn()" class="ms-2">
+      <a class="nav-link btn btn-success" routerLink="/login">Login</a>
+    </li>
+    <li *ngIf="!authService.isLoggedIn()" class="ms-2">
+      <a class="nav-link btn btn-warning" routerLink="/register">Register</a>
+    </li>
+    <li *ngIf="authService.isLoggedIn()" class="ms-2">
+      <a class="nav-link btn btn-danger" (click)="logout()">Logout</a>
+    </li>
+
+         
+        </ul>
+      </nav>
+    </div>
+    <p class="text-center mt-2 mb-0 slogan">Where you enjoy the most shopping experience</p>
+  </div>
+</header>

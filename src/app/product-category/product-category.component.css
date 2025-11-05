@@ -1,0 +1,122 @@
+/* Hero section */
+.hero-contact {
+  background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+  padding: 40px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Store heading */
+.hero-contact h2 {
+  font-size: 2.5rem;
+  color: #007bff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Category title */
+.category-title {
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* Product card */
+.product-card {
+  background-color: #fff;
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for cards */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Product image wrapper */
+.image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  max-height: 100%;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Product info */
+.product-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.product-desc {
+  font-size: 0.875rem;
+  color: #6c757d;
+  flex-grow: 1;
+}
+
+.product-category,
+.product-unit {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Add to Cart button */
+.btn-outline-primary {
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .image-wrapper {
+    height: 180px;
+  }
+  .product-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-contact h2 {
+    font-size: 2rem;
+  }
+  .category-title {
+    font-size: 1.3rem;
+  }
+}

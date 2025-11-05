@@ -1,0 +1,54 @@
+<div class="hero-contact d-flex justify-content-center">
+  <div class="container py-4 px-3">
+    <h2 class="text-center mb-4 fw-bold text-primary">Toy Store</h2>
+
+    <div class="row g-4 justify-content-center">
+      <div *ngFor="let category of productsCategory" class="col-12">
+        <h4 class="category-title mb-3">{{ category.categoryName }}</h4>
+
+        <div class="row g-3 justify-content-center">
+          <div
+            *ngFor="let prod of category.products"
+            class="col-sm-6 col-md-4 col-lg-3"
+          >
+            <div class="product-card shadow-sm p-3 h-100 rounded-4">
+
+              <!-- Product image -->
+              <div class="image-wrapper">
+                <img
+  class="product-img img-fluid rounded"
+  [src]="'http://localhost:8080/images/' + prod.imageFile"
+  alt="{{ prod.name }}"
+
+/>
+
+              </div>
+
+              <!-- Product details -->
+              <div class="product-info mt-3">
+                <h5 class="product-name fw-semibold">{{ prod.name }}</h5>
+                <p class="product-desc text-muted small">{{ prod.description }}</p>
+                <p class="product-category text-secondary small mb-1">
+                  {{ prod.categoryName }}
+                </p>
+                <p class="product-unit text-secondary small">
+                  {{ prod.unitOfMeasure }}
+                </p>
+                <p class="product-price fw-bold text-success mb-3">
+                  ₱{{ prod.price }}
+                </p>
+
+                <!-- Add to Cart button -->
+                <button (click)="addToCart(prod)" class="btn btn-outline-primary w-100">
+                  <img src="/icons/shoppingcart.svg" width="18" class="me-2" />
+                  Add to Cart
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

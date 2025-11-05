@@ -1,0 +1,51 @@
+<div class="container py-4">
+  <h2 class="fw-bold text-primary text-center mb-4">My Orders</h2>
+
+  <table class="table table-bordered align-middle text-center" *ngIf="order.length > 0; else noOrder">
+    <thead class="table-light">
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of order">
+        <td>{{ item.productName || item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price | currency }}</td>
+        <td>{{ item.quantity * item.price | currency }}</td>
+        <td>
+          <span
+            [ngClass]="{
+              'text-success fw-bold': item.status === 'Ordered',
+              'text-danger fw-bold': item.status === 'Cancelled'
+            }"
+          >
+            {{ item.status || 'Ordered' }}
+          </span>
+        </td>
+        <td>
+          <button
+            class="btn btn-warning btn-sm me-2"
+            [disabled]="item.status === 'Cancelled'"
+            (click)="cancelOrder(item)"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteOrder(item)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noOrder>
+    <div class="text-center text-muted mt-4">No orders yet.</div>
+  </ng-template>
+</div>
