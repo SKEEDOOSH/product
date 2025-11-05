@@ -12,8 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { OrderComponent } from './order/order-component';
 
 const routes: Routes = [
-  { path: '', component: MainBodyComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'main-body', component: MainBodyComponent },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'order', component: OrderComponent },
   { path: 'cart', component: ShoppingCartComponent },

@@ -2,8 +2,8 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <!-- Logo -->
-  <a class="navbar-brand" routerLink="">
-  <img [src]="'/GMART.png'" alt="GMART Logo" style="height: 40px;">
+  <a class="navbar-brand" routerLink="main-body">
+  <img [src]="'/toy.png'" alt="GMART Logo" style="height: 40px;">
 
 </a>
       
@@ -18,7 +18,7 @@
           </li>
 
             <li *ngIf="!authService.isLoggedIn()" class="ms-2">
-      <a class="nav-link btn btn-success" routerLink="/login">Login</a>
+      <a class="nav-link btn btn-success" routerLink="/">Login</a>
     </li>
     <li *ngIf="!authService.isLoggedIn()" class="ms-2">
       <a class="nav-link btn btn-warning" routerLink="/register">Register</a>

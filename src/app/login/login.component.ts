@@ -21,8 +21,8 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('user', JSON.stringify(res));
-        alert('Login successful!');
-        this.router.navigate(['/']); // redirect to home page
+       // alert('Login successful!');
+        this.router.navigate(['/main-body']); 
       },
       error: () => alert('Invalid credentials')
     });
